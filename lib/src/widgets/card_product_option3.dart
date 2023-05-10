@@ -1,0 +1,103 @@
+import 'package:flutter/material.dart';
+
+class CardProductOption3 extends StatefulWidget {
+  const CardProductOption3({super.key});
+
+  @override
+  State<CardProductOption3> createState() => _CardProductOption3State();
+}
+
+class _CardProductOption3State extends State<CardProductOption3> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+      padding: const EdgeInsets.all(10),
+      width: 200,
+      height: 300,
+      decoration: BoxDecoration(
+        border: Border.all(
+          width: 4,
+          color: Colors.grey.shade200,
+        ),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Column(
+        children: [
+          Image.network(
+            'https://d2r9epyceweg5n.cloudfront.net/stores/987/204/products/rimula-r4-x-15w40-4l1-ac889731d29dd4c3fc16197199460451-640-0.jpg',
+            width: 200,
+            height: 96,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'SHELL HELIX ',
+                  style: TextStyle(
+                    fontFamily: 'Roboto',
+                    fontSize: 16,
+                    color: Colors.grey.shade900,
+                  ),
+                ),
+                Text(
+                  'Shell Advance AX5 20W-50 ',
+                  style: TextStyle(
+                    fontFamily: 'Roboto',
+                    fontSize: 14,
+                    color: Colors.grey.shade900,
+                  ),
+                  textAlign: TextAlign.left,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      'SKU:45465465',
+                      style: TextStyle(
+                          fontFamily: 'Roboto',
+                          fontSize: 12,
+                          color: Colors.grey.shade800,
+                          fontWeight: FontWeight.w300),
+                    ),
+                    Text('-'),
+                  ],
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      'S/850.00',
+                      style: TextStyle(
+                          fontFamily: 'Roboto',
+                          fontSize: 20,
+                          color: Color(0xFFF86C5E),
+                          fontWeight: FontWeight.w400),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('Disponible',
+                        style: TextStyle(
+                            color: Color(0xFF7CB518),
+                            fontSize: 14,
+                            fontFamily: 'Roboto')),
+                    Icon(
+                      Icons.favorite,
+                      color: Colors.grey.shade200,
+                    )
+                  ],
+                )
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
