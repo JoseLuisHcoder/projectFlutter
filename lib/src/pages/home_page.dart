@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../widgets/card_product_option3.dart';
 import '../widgets/card_product_option4.dart';
+import '../widgets/more_info_offer.dart';
 import '../widgets/search.dart';
 
 class SolarColors {
@@ -167,9 +168,8 @@ class HomePage extends StatelessWidget {
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(children: const [
-              CardProductOption3(),
-              CardProductOption3(),
-              CardProductOption3(),
+              // CardProductOption3(),
+              MoreInfoOffer(),
             ]),
           )
         ],
