@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:cart/src/widgets/card_product_option2.dart';
-
 import '../widgets/card_product_option3.dart';
+import '../widgets/card_product_option4.dart';
 import '../widgets/search.dart';
 
 class SolarColors {
@@ -26,39 +25,156 @@ class HomePage extends StatelessWidget {
           backgroundColor: const Color(0xff525252),
           title: _titelAppHomePage(),
         ),
-        body: Container(
-          child: Column(children: [
-            _textPromotions(),
-            const SizedBox(
-              height: 15,
-            ),
-            _cardSlider(),
-            SizedBox(
-              height: 10,
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+        body: Column(children: [
+          _textPromotions(),
+          const SizedBox(
+            height: 15,
+          ),
+          Flexible(
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
               child: Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        '¡NO DEJES QUE OTROS SE LO LLEVEN!',
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xFFF86C5E)),
-                        textAlign: TextAlign.start,
-                      ),
-                    ],
+                  _cardSlider(),
+                  const SizedBox(
+                    height: 10,
                   ),
-                  CardProductOption3(),
+                  _productPromotions(),
+                  _productNew(),
+                  _productLikes(),
+                  _productRecomended()
                 ],
               ),
-            )
-          ]),
-        ));
+            ),
+          ),
+        ]));
+  }
+
+  Container _productRecomended() {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: const [
+              Text(
+                'RECOMENDADOS PARA TI',
+                style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFFF86C5E)),
+                textAlign: TextAlign.start,
+              ),
+            ],
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(children: const [
+              CardProductOption4(),
+              CardProductOption4(),
+              CardProductOption4(),
+              CardProductOption4(),
+            ]),
+          )
+        ],
+      ),
+    );
+  }
+
+  Container _productLikes() {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: const [
+              Text(
+                'LOS PRODUCTOS QUE TE GUSTAN',
+                style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFFF86C5E)),
+                textAlign: TextAlign.start,
+              ),
+            ],
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(children: const [
+              CardProductOption4(),
+              CardProductOption4(),
+              CardProductOption4(),
+              CardProductOption4(),
+            ]),
+          )
+        ],
+      ),
+    );
+  }
+
+  Container _productNew() {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: const [
+              Text(
+                'PRODUCTOS NUEVOS',
+                style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFFF86C5E)),
+                textAlign: TextAlign.start,
+              ),
+            ],
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(children: const [
+              CardProductOption4(),
+              CardProductOption4(),
+              CardProductOption4(),
+              CardProductOption4(),
+            ]),
+          )
+        ],
+      ),
+    );
+  }
+
+  Container _productPromotions() {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: const [
+              Text(
+                '¡NO DEJES QUE OTROS SE LO LLEVEN!',
+                style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFFF86C5E)),
+                textAlign: TextAlign.start,
+              ),
+            ],
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(children: const [
+              CardProductOption3(),
+              CardProductOption3(),
+              CardProductOption3(),
+            ]),
+          )
+        ],
+      ),
+    );
   }
 
   Container _cardSlider() {
@@ -68,7 +184,7 @@ class HomePage extends StatelessWidget {
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
-            children: [
+            children: const [
               Text(
                 'RECIBES MÁS, GANAS MÁS...',
                 style: TextStyle(
@@ -118,8 +234,8 @@ class HomePage extends StatelessWidget {
                                 color: Colors.grey.shade800,
                                 fontWeight: FontWeight.w300),
                           ),
-                          Text('-'),
-                          Text('Disponible',
+                          const Text('-'),
+                          const Text('Disponible',
                               style: TextStyle(
                                 color: Color(0xFF7CB518),
                               ))
@@ -128,7 +244,7 @@ class HomePage extends StatelessWidget {
                       Row(
                         children: [
                           Container(
-                            padding: EdgeInsets.all(4),
+                            padding: const EdgeInsets.all(4),
                             decoration: BoxDecoration(
                               color: Colors.grey.shade200,
                               borderRadius: BorderRadius.circular(20),
@@ -137,18 +253,18 @@ class HomePage extends StatelessWidget {
                                 width: 1,
                               ),
                             ),
-                            child: Icon(
+                            child: const Icon(
                               Icons.remove,
                               size: 10,
                             ),
                           ),
-                          Text(
+                          const Text(
                             ' 1 ',
                             style:
                                 TextStyle(fontSize: 14, fontFamily: 'Roboto'),
                           ),
                           Container(
-                            padding: EdgeInsets.all(4),
+                            padding: const EdgeInsets.all(4),
                             decoration: BoxDecoration(
                               color: Colors.grey.shade200,
                               borderRadius: BorderRadius.circular(20),
@@ -157,7 +273,7 @@ class HomePage extends StatelessWidget {
                                 width: 1,
                               ),
                             ),
-                            child: Icon(
+                            child: const Icon(
                               Icons.add,
                               size: 10,
                             ),
@@ -166,7 +282,7 @@ class HomePage extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          Text(
+                          const Text(
                             'S/850.00',
                             style: TextStyle(
                                 fontFamily: 'Roboto',
@@ -174,8 +290,8 @@ class HomePage extends StatelessWidget {
                                 color: Color(0xFFF86C5E),
                                 fontWeight: FontWeight.w400),
                           ),
-                          Text(' - '),
-                          Text(''),
+                          const Text(' - '),
+                          const Text(''),
                           Text(
                             "S/ 870.00",
                             style: TextStyle(
@@ -186,7 +302,7 @@ class HomePage extends StatelessWidget {
                         ],
                       ),
                       Row(
-                        children: [
+                        children: const [
                           Text('\u{1f525}'),
                           Text(
                             ' Estas ahorrando S/20.00',
@@ -216,7 +332,7 @@ class HomePage extends StatelessWidget {
       color: const Color(0xFFDEDEDE),
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: const [
           Text('¡No te pierdas los descuentos ONLINE!',
               style: TextStyle(fontSize: 14)),

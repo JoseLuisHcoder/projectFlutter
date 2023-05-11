@@ -11,7 +11,7 @@ class CartItems extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text(
+        title: const Text(
           "Carro de compras",
           style:
               TextStyle(fontSize: 20, fontFamily: 'Roboto', color: Colors.grey),
@@ -27,8 +27,8 @@ class CartItems extends StatelessWidget {
         children: <Widget>[
           textoTitulo(),
           textoDropdawnSuperior(),
-          CardProduct(),
-          CardProductOption2(),
+          const CardProduct(),
+          const CardProductOption2(),
           buttonTotal(),
         ],
       ),
@@ -41,9 +41,9 @@ Widget textoTitulo() {
     children: [
       Expanded(
           child: Container(
-              color: Color(0xFF03a9f4),
-              padding: EdgeInsets.all(10),
-              child: Text.rich(
+              color: const Color(0xFF03a9f4),
+              padding: const EdgeInsets.all(10),
+              child: const Text.rich(
                   textAlign: TextAlign.center,
                   TextSpan(
                     text:
@@ -68,10 +68,10 @@ Widget textoTitulo() {
 
 Widget textoDropdawnSuperior() {
   return Container(
-    padding: EdgeInsets.all(12),
+    padding: const EdgeInsets.all(12),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: [
+      children: const [
         Text('¿Cuando quieres Recibir tu compra?',
             textAlign: TextAlign.center,
             style: TextStyle(fontFamily: 'Roboto', fontSize: 14)),
@@ -90,16 +90,16 @@ Widget buttonTotal() {
     width: double.infinity,
     child: Column(
       children: [
-        Icon(
+        const Icon(
           Icons.keyboard_arrow_up_sharp,
           color: Colors.white,
         ),
         Container(
-          padding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+              const Text(
                 'Total: S/ 1800.00',
                 style: TextStyle(
                     fontSize: 20,
@@ -109,15 +109,16 @@ Widget buttonTotal() {
               ),
               ElevatedButton(
                 onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFFFFD400),
+                ),
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
-                  child: Text(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
+                  child: const Text(
                     'Hacer pedido',
                     style: TextStyle(color: Colors.black),
                   ),
-                ),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFFFFD400),
                 ),
               ),
             ],

@@ -6,8 +6,8 @@ class CardProduct extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-      padding: EdgeInsets.all(10),
+      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+      padding: const EdgeInsets.all(10),
       width: double.infinity,
       decoration: BoxDecoration(
         border: Border.all(
@@ -20,21 +20,19 @@ class CardProduct extends StatelessWidget {
         children: [
           Row(
             children: [
-              Container(
-                child: Stack(
-                  children: [
-                    Image.network(
-                        'https://d2r9epyceweg5n.cloudfront.net/stores/987/204/products/rimula-r4-x-15w40-4l1-ac889731d29dd4c3fc16197199460451-640-0.jpg',
-                        width: 120),
-                    Positioned(
-                        right: 0,
-                        child: ElevatedButton(
-                            onPressed: () {}, child: Text('!Nuevo¡'))),
-                  ],
-                ),
+              Stack(
+                children: [
+                  Image.network(
+                      'https://d2r9epyceweg5n.cloudfront.net/stores/987/204/products/rimula-r4-x-15w40-4l1-ac889731d29dd4c3fc16197199460451-640-0.jpg',
+                      width: 120),
+                  Positioned(
+                      right: 0,
+                      child: ElevatedButton(
+                          onPressed: () {}, child: const Text('!Nuevo¡'))),
+                ],
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 12),
+                padding: const EdgeInsets.symmetric(horizontal: 12),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -65,8 +63,8 @@ class CardProduct extends StatelessWidget {
                               color: Colors.grey.shade800,
                               fontWeight: FontWeight.w300),
                         ),
-                        Text('-'),
-                        Text('Disponible',
+                        const Text('-'),
+                        const Text('Disponible',
                             style: TextStyle(
                               color: Color(0xFF7CB518),
                             ))
@@ -75,7 +73,7 @@ class CardProduct extends StatelessWidget {
                     Row(
                       children: [
                         Container(
-                          padding: EdgeInsets.all(4),
+                          padding: const EdgeInsets.all(4),
                           decoration: BoxDecoration(
                             color: Colors.grey.shade200,
                             borderRadius: BorderRadius.circular(20),
@@ -84,17 +82,17 @@ class CardProduct extends StatelessWidget {
                               width: 1,
                             ),
                           ),
-                          child: Icon(
+                          child: const Icon(
                             Icons.remove,
                             size: 10,
                           ),
                         ),
-                        Text(
+                        const Text(
                           ' 1 ',
                           style: TextStyle(fontSize: 14, fontFamily: 'Roboto'),
                         ),
                         Container(
-                          padding: EdgeInsets.all(4),
+                          padding: const EdgeInsets.all(4),
                           decoration: BoxDecoration(
                             color: Colors.grey.shade200,
                             borderRadius: BorderRadius.circular(20),
@@ -103,7 +101,7 @@ class CardProduct extends StatelessWidget {
                               width: 1,
                             ),
                           ),
-                          child: Icon(
+                          child: const Icon(
                             Icons.add,
                             size: 10,
                           ),
@@ -112,7 +110,7 @@ class CardProduct extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        Text(
+                        const Text(
                           'S/850.00',
                           style: TextStyle(
                               fontFamily: 'Roboto',
@@ -120,8 +118,8 @@ class CardProduct extends StatelessWidget {
                               color: Color(0xFFF86C5E),
                               fontWeight: FontWeight.w400),
                         ),
-                        Text(' - '),
-                        Text(''),
+                        const Text(' - '),
+                        const Text(''),
                         Text(
                           "S/ 870.00",
                           style: TextStyle(
@@ -132,7 +130,7 @@ class CardProduct extends StatelessWidget {
                       ],
                     ),
                     Row(
-                      children: [
+                      children: const [
                         Text('\u{1f525}'),
                         Text(
                           ' Estas ahorrando S/20.00',
@@ -148,7 +146,7 @@ class CardProduct extends StatelessWidget {
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 7,
           ),
           Text(
@@ -158,7 +156,7 @@ class CardProduct extends StatelessWidget {
                 fontSize: 12,
                 color: Colors.grey.shade600),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Row(
@@ -166,7 +164,7 @@ class CardProduct extends StatelessWidget {
             children: [
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
+                children: const [
                   Text('Ganas: '),
                   Text(
                     '10 puntos',
@@ -183,7 +181,7 @@ class CardProduct extends StatelessWidget {
                     Icons.turned_in_not,
                     color: Colors.grey.shade800,
                   ),
-                  Icon(
+                  const Icon(
                     Icons.delete_forever_sharp,
                     color: Color(0xFFF86C5E),
                   )

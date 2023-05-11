@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Material App',
       theme: ThemeData(fontFamily: 'Roboto'),
-      home: CartItems(),
+      home: const HomePage(),
     );
   }
 }

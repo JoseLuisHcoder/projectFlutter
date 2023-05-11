@@ -1,29 +1,19 @@
 import 'package:flutter/material.dart';
 
-class CardProductOption2 extends StatelessWidget {
-  const CardProductOption2({super.key});
+class CardProductOption4 extends StatefulWidget {
+  const CardProductOption4({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          children: [
-            cardExpanded(),
-            cardExpanded(),
-          ],
-        )
-      ],
-    );
-  }
+  State<CardProductOption4> createState() => _CardProductOption4State();
 }
 
-Widget cardExpanded() {
-  return Expanded(
-    child: Container(
+class _CardProductOption4State extends State<CardProductOption4> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
       margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
       padding: const EdgeInsets.all(10),
-      width: double.infinity,
+      width: 170,
       decoration: BoxDecoration(
         border: Border.all(
           width: 4,
@@ -121,6 +111,6 @@ Widget cardExpanded() {
           )
         ],
       ),
-    ),
-  );
+    );
+  }
 }
