@@ -1,5 +1,6 @@
 import 'package:cart/src/pages/cart_items.dart';
 import 'package:cart/src/pages/descubre.dart';
+import 'package:cart/src/pages/order_confirm.dart';
 
 import 'package:cart/src/pages/orders.dart';
 import 'package:cart/src/pages/orders_history.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Material App',
       theme: ThemeData(fontFamily: 'Roboto'),
-      home: const DetailAmountCart(),
+      home: const OrderConfirm(),
     );
   }
 }
