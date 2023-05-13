@@ -5,14 +5,16 @@ class OrderConfirm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        _buttonHeader(context),
-        _dateOfOrder(),
-        _dateItemsOrder(),
-        _totalAmount(),
-        _buttonsInfo(context)
-      ],
+    return Scaffold(
+      body: Column(
+        children: [
+          _buttonHeader(context),
+          _dateOfOrder(),
+          _dateItemsOrder(),
+          _totalAmount(),
+          _buttonsInfo(context)
+        ],
+      ),
     );
     ;
   }

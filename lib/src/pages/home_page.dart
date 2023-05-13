@@ -1,9 +1,12 @@
+import 'package:cart/src/pages/payments.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/card_product_option3.dart';
 import '../widgets/card_product_option4.dart';
 import '../widgets/more_info_offer.dart';
 import '../widgets/search.dart';
+import 'descubre.dart';
+import 'orders.dart';
 
 class SolarColors {
   static const Color color1 = Color(0xff525252);
@@ -16,39 +19,45 @@ class SolarColors {
   static const Color color8 = Color(0xFFDEDEDE);
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color(0xff525252),
-          title: _titelAppHomePage(),
+      appBar: AppBar(
+        backgroundColor: const Color(0xff525252),
+        title: _titelAppHomePage(),
+      ),
+      body: Column(children: [
+        _textPromotions(),
+        const SizedBox(
+          height: 15,
         ),
-        body: Column(children: [
-          _textPromotions(),
-          const SizedBox(
-            height: 15,
-          ),
-          Flexible(
-            child: SingleChildScrollView(
-              scrollDirection: Axis.vertical,
-              child: Column(
-                children: [
-                  _cardSlider(),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  _productPromotions(),
-                  _productNew(),
-                  _productLikes(),
-                  _productRecomended()
-                ],
-              ),
+        Flexible(
+          child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Column(
+              children: [
+                _cardSlider(),
+                const SizedBox(
+                  height: 10,
+                ),
+                _productPromotions(),
+                _productNew(),
+                _productLikes(),
+                _productRecomended()
+              ],
             ),
           ),
-        ]));
+        ),
+      ]),
+    );
   }
 
   Container _productRecomended() {
