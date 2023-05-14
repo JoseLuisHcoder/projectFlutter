@@ -1,4 +1,6 @@
 import 'package:cart/src/pages/orders_history.dart';
+import 'package:cart/src/pages/tracking_order.dart';
+import 'package:cart/src/pages/tracking_order_cancel2.dart';
 import 'package:flutter/material.dart';
 
 class Orders extends StatelessWidget {
@@ -25,7 +27,12 @@ class Orders extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             height: 48,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const TrackingOrder()));
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.grey.shade600,
               ),
@@ -44,7 +51,12 @@ class Orders extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             height: 48,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const TrackingOrderCancel2()));
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFFF86C5E),
               ),
