@@ -40,21 +40,7 @@ class _TrackingOrderCancel2State extends State<TrackingOrderCancel2> {
                 const SizedBox(
                   height: 7,
                 ),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 5),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      border:
-                          Border.all(color: Colors.grey.shade200, width: 1)),
-                  child: ListTile(
-                    trailing: const Icon(Icons.keyboard_arrow_down),
-                    title: Text('Quiero modificar el pedido',
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontFamily: 'Roboto',
-                            color: Colors.grey.shade800)),
-                  ),
-                ),
+                _optionDrawer(),
                 const SizedBox(
                   height: 10,
                 ),
@@ -74,6 +60,23 @@ class _TrackingOrderCancel2State extends State<TrackingOrderCancel2> {
             _buttonsInfo(context),
           ],
         ),
+      ),
+    );
+  }
+
+  Container _optionDrawer() {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 5),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(color: Colors.grey.shade200, width: 1)),
+      child: ListTile(
+        trailing: const Icon(Icons.keyboard_arrow_down),
+        title: Text('Quiero modificar el pedido',
+            style: TextStyle(
+                fontSize: 16,
+                fontFamily: 'Roboto',
+                color: Colors.grey.shade800)),
       ),
     );
   }

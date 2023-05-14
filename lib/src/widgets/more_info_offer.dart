@@ -99,8 +99,12 @@ class _MoreInfoOfferState extends State<MoreInfoOffer> {
                           Icon(
                             Icons.shopping_cart_checkout_outlined,
                             color: Colors.grey.shade800,
+                            size: 15,
                           ),
-                          Text(
+                          const SizedBox(
+                            width: 7,
+                          ),
+                          const Text(
                             'Agregar',
                             textAlign: TextAlign.center,
                             style: TextStyle(color: Colors.black),

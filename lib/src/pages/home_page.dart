@@ -1,11 +1,14 @@
 import 'package:cart/src/pages/payments.dart';
+import 'package:cart/src/pages/promotion_detail.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/card_product_option3.dart';
 import '../widgets/card_product_option4.dart';
 import '../widgets/more_info_offer.dart';
 import '../widgets/search.dart';
+import 'cart_items.dart';
 import 'descubre.dart';
+import 'morre_offers.dart';
 import 'orders.dart';
 
 class SolarColors {
@@ -177,7 +180,7 @@ class _HomePageState extends State<HomePage> {
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(children: const [
-              // CardProductOption3(),
+              CardProductOption3(),
               MoreInfoOffer(),
             ]),
           )
@@ -325,9 +328,17 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-                Image.network(
-                    'https://d2r9epyceweg5n.cloudfront.net/stores/987/204/products/rimula-r4-x-15w40-4l1-ac889731d29dd4c3fc16197199460451-640-0.jpg',
-                    width: 120),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const PromotionDetail()));
+                  },
+                  child: Image.network(
+                      'https://d2r9epyceweg5n.cloudfront.net/stores/987/204/products/rimula-r4-x-15w40-4l1-ac889731d29dd4c3fc16197199460451-640-0.jpg',
+                      width: 120),
+                )
               ],
             ),
           )
@@ -354,15 +365,26 @@ class _HomePageState extends State<HomePage> {
   Row _titelAppHomePage() {
     return Row(
       children: [
-        Flexible(child: Search()),
+        const Flexible(child: Search()),
         SizedBox(
             width: 30,
             child: IconButton(
-                onPressed: () {}, icon: const Icon(Icons.notifications_none))),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (constext) => const MoreOffers()));
+                },
+                icon: const Icon(Icons.notifications_none))),
         SizedBox(
             width: 48,
             child: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const CartItems()));
+                },
                 icon: const Icon(Icons.shopping_cart_outlined)))
       ],
     );

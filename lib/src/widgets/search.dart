@@ -14,7 +14,7 @@ class _SearchState extends State<Search> {
       height: 32,
       width: MediaQuery.of(context).size.width * 0.72,
       padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-      margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+      margin: const EdgeInsets.symmetric(horizontal: 1, vertical: 2),
       decoration: BoxDecoration(
         border: Border.all(
           width: 1,
