@@ -1,5 +1,6 @@
 import 'package:cart/src/pages/payments.dart';
 import 'package:cart/src/pages/promotion_detail.dart';
+import 'package:cart/src/pages/search_page.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/card_product_option3.dart';
@@ -365,7 +366,48 @@ class _HomePageState extends State<HomePage> {
   Row _titelAppHomePage() {
     return Row(
       children: [
-        const Flexible(child: Search()),
+        Flexible(
+            child: Container(
+          height: 32,
+          width: MediaQuery.of(context).size.width * 0.72,
+          padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+          margin: const EdgeInsets.symmetric(horizontal: 1, vertical: 2),
+          decoration: BoxDecoration(
+            border: Border.all(
+              width: 1,
+              color: Colors.grey.shade800,
+            ),
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(16),
+          ),
+          child: TextFormField(
+            decoration: InputDecoration(
+              hintText: 'Busca en nuestro almacen',
+              contentPadding: const EdgeInsets.fromLTRB(0, 12, 0, 16),
+              border: InputBorder.none,
+              suffixIcon: Container(
+                  width: 32,
+                  height: 24,
+                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 2),
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade800,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SearchPage()));
+                      },
+                      color: Colors.white,
+                      iconSize: 20,
+                      icon: const Icon(
+                        Icons.search,
+                      ))),
+            ),
+          ),
+        )),
         SizedBox(
             width: 30,
             child: IconButton(
