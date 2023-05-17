@@ -1,3 +1,5 @@
+import 'package:cart/src/pages/search2.dart';
+import 'package:cart/src/pages/search_1.dart';
 import 'package:flutter/material.dart';
 
 class SearchPage extends StatefulWidget {
@@ -71,15 +73,21 @@ class _SearchPageState extends State<SearchPage> {
         spacing: 7,
         runSpacing: 7,
         children: [
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
-            decoration: BoxDecoration(
-                color: const Color(0xFFDEDEDE),
-                border: Border.all(width: 1, color: Colors.grey.shade200),
-                borderRadius: BorderRadius.circular(16)),
-            child: Text(
-              'Baterías para auto',
-              style: TextStyle(fontSize: 12, color: Colors.grey.shade800),
+          InkWell(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Search1()));
+            },
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
+              decoration: BoxDecoration(
+                  color: const Color(0xFFDEDEDE),
+                  border: Border.all(width: 1, color: Colors.grey.shade200),
+                  borderRadius: BorderRadius.circular(16)),
+              child: Text(
+                'Baterías para auto',
+                style: TextStyle(fontSize: 12, color: Colors.grey.shade800),
+              ),
             ),
           ),
           Container(
@@ -251,17 +259,23 @@ class _SearchPageState extends State<SearchPage> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Column(
-            children: [
-              CircleAvatar(
-                radius: 32,
-                backgroundColor: Colors.grey.shade200,
-              ),
-              const Text(
-                'Lubricantes',
-                style: TextStyle(fontSize: 12),
-              )
-            ],
+          InkWell(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Search2()));
+            },
+            child: Column(
+              children: [
+                CircleAvatar(
+                  radius: 32,
+                  backgroundColor: Colors.grey.shade200,
+                ),
+                const Text(
+                  'Lubricantes',
+                  style: TextStyle(fontSize: 12),
+                )
+              ],
+            ),
           ),
           const SizedBox(
             width: 15,
