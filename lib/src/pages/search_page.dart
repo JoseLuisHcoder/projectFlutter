@@ -1,5 +1,5 @@
-import 'package:cart/src/pages/search2.dart';
 import 'package:cart/src/pages/search_1.dart';
+import 'package:cart/src/pages/search_2.dart';
 import 'package:flutter/material.dart';
 
 class SearchPage extends StatefulWidget {
