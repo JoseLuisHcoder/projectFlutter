@@ -1,6 +1,8 @@
 import 'package:cart/src/pages/products_best_sellings.dart';
 import 'package:flutter/material.dart';
 
+import 'login.dart';
+
 class More extends StatefulWidget {
   const More({super.key});
 
@@ -66,7 +68,10 @@ class _MoreState extends State<More> {
           ListTile(
             trailing: const Icon(Icons.chevron_right),
             leading: const Icon(Icons.help_outline),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Login()));
+            },
             title: Container(
               padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
               child: Text('Centro de ayuda',
