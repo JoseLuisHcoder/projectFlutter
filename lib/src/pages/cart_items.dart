@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../data/themes.dart';
 import '../widgets/card_product.dart';
 import '../widgets/card_product_option2.dart';
 
@@ -41,7 +42,7 @@ Widget textoTitulo() {
     children: [
       Expanded(
           child: Container(
-              color: const Color(0xFF03a9f4),
+              color: kBlue,
               padding: const EdgeInsets.all(10),
               child: const Text.rich(
                   textAlign: TextAlign.center,

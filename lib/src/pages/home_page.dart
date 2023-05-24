@@ -3,6 +3,7 @@ import 'package:cart/src/pages/promotion_detail.dart';
 import 'package:cart/src/pages/search_page.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/button_oferts.dart';
 import '../widgets/card_product_option3.dart';
 import '../widgets/card_product_option4.dart';
 import '../widgets/more_info_offer.dart';
@@ -11,17 +12,6 @@ import 'cart_items.dart';
 import 'descubre.dart';
 import 'morre_offers.dart';
 import 'orders.dart';
-
-class SolarColors {
-  static const Color color1 = Color(0xff525252);
-  static const Color color2 = Color(0xffCACACA);
-  static const Color color3 = Color(0xFFF86C5E);
-  static const Color color4 = Color(0xFF8E8E8E);
-  static const Color color5 = Color(0xFF00BBF9);
-  static const Color color6 = Color(0xFFFFD400);
-  static const Color color7 = Color(0xFF7CB518);
-  static const Color color8 = Color(0xFFDEDEDE);
-}
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -180,10 +170,7 @@ class _HomePageState extends State<HomePage> {
           ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            child: Row(children: const [
-              CardProductOption3(),
-              MoreInfoOffer(),
-            ]),
+            child: Row(children: const [CardProductOption3(), ButtonOferts()]),
           )
         ],
       ),
